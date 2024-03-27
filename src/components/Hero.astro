@@ -1,0 +1,76 @@
+---
+import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
+---
+
+<div
+  class="lg:px-40 px-6 flex flex-col justify-center gap-4 lg:gap-8 items-center mt-14 lg:mt-28"
+>
+  <h1
+    class="text-center text-4xl lg:text-7xl flex flex-col justify-center gap-4"
+  >
+    <span class="font-light">Code Editing.</span>
+    <span class="font-medium">Redefined</span>
+  </h1>
+  <p class="text-center text-md lg:text-xl font-light">
+    A free, open source, cross platform code editor
+  </p>
+  <div
+    class="flex justify-center items-center text-sm lg:text-lg font-light gap-2 lg:gap-3"
+  >
+    <div
+      style={{
+        "--start-color": "rgb(31, 156, 240, 0.8)",
+        "--end-color": "#206DBF",
+      }}
+      class="p-[2px] bg-gradient-to-t gradient rounded-[calc(0.375rem+2px)] lg:rounded-[calc(0.5rem+2px)]"
+    >
+      <a
+        href="#"
+        class="bg-accent-1 text-white px-5 lg:px-6 py-2 gap-1 flex justify-center items-center rounded-md lg:rounded-lg"
+      >
+        <DownloadIcon className="lg:w-5 lg:h-5" />
+        Download
+      </a>
+    </div>
+
+    <div
+      style={{
+        "--start-color": "rgb(31, 156, 240, 0.5)",
+        "--end-color": "#38393E",
+      }}
+      class="p-[2px] bg-gradient-to-t gradient rounded-[calc(0.375rem+2px)] lg:rounded-[calc(0.5rem+2px)]"
+    >
+      <a
+        href="#"
+        class="bg-gray-1 text-white px-5 lg:px-6 py-2 rounded-md lg:rounded-lg gap-1 flex justify-center items-center"
+        >Try it on the Web
+        <ArrowRightIcon className="lg:w-5 lg:h-5" />
+      </a>
+    </div>
+  </div>
+  <div class="flex justify-center items-center relative">
+    <div
+      class="lg:mt-14 editor-bg mt-5 p-0 lg:p-[2px] rounded-[calc(2px+0.5rem)]"
+    >
+      <img src="/dark+.png" class="rounded-lg" />
+    </div>
+    <div
+      class="blob-1 rounded-full aspect-square absolute z-[-1] top-[80%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-accent-1 blur-[150px] w-[90vw] lg:blur-[300px] lg:w-[65vw]"
+    >
+    </div>
+  </div>
+</div>
+
+<style>
+  .gradient {
+    --tw-gradient-stops: var(--start-color) 0%, var(--end-color) 90%;
+  }
+
+  .editor-bg {
+    background: linear-gradient(
+      to bottom,
+      rgba(31, 156, 240, 0.6) 0%,
+      rgba(31, 156, 240, 0) 80%
+    );
+  }
+</style>

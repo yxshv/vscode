@@ -12,6 +12,13 @@ export default {
           1: "#E9EBF4",
           2: "#B2B4BE",
         },
+        accent: {
+          1: "#206DBF",
+          2: "#1F9CF0",
+        },
+        gray: {
+          1: "#38393E",
+        },
       },
     },
   },

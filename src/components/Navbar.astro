@@ -3,7 +3,9 @@ import Vscode from "../assets/vscode.svg";
 import { MagnifyingGlassIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 ---
 
-<nav class="flex justify-between text-md py-6 lg:py-8 items-center">
+<nav
+  class="flex relative lg:px-40 px-6 justify-between text-md py-6 lg:py-8 items-center"
+>
   <a href="/" class="cursor-pointer flex justify-center gap-2 items-center">
     <img src={Vscode.src} alt="vscode logo" class="w-5" />
     Visual Studio Code
@@ -19,7 +21,53 @@ import { MagnifyingGlassIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
     </a>
   </div>
 
-  <button class="lg:hidden flex justify-center items-center">
+  <button
+    id="menu-button"
+    data-open
+    class="lg:hidden flex justify-center items-center"
+  >
     <HamburgerMenuIcon className="w-5 h-5" />
   </button>
+
+  <div
+    id="menu-content"
+    class="lg:hidden hidden border-b border-accent-1 absolute w-screen overflow-hidden flex top-full left-0 px-6 pb-5 gap-2 text-text-2 flex-col"
+    data-open="false"
+  >
+    <a class="cursor-pointer hover:text-text-1">Docs</a>
+    <a class="cursor-pointer hover:text-text-1">Blog</a>
+    <a class="cursor-pointer hover:text-text-1">API</a>
+    <a class="cursor-pointer hover:text-text-1">Extension</a>
+  </div>
 </nav>
+
+<script lang="ts">
+  const btn = document.getElementById("menu-button");
+  const content = document.getElementById("menu-content");
+
+  btn.addEventListener("click", () => {
+    console.log("clicked");
+    const isOpen = JSON.parse(content.dataset.open);
+    console.log(isOpen);
+    if (isOpen) {
+      content.dataset.open = "false";
+      btn.dataset.open = "false";
+    } else {
+      content.dataset.open = "true";
+      btn.dataset.open = "true";
+    }
+  });
+</script>
+
+<style>
+  #menu-button {
+    transition: height 0.3s;
+  }
+
+  #menu-content[data-open="true"] {
+    height: max-content;
+  }
+  #menu-content[data-open="false"] {
+    height: 0;
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <html lang="en">
@@ -11,8 +12,9 @@ import Navbar from "../components/Navbar.astro";
     <title>Visual Studio Code</title>
   </head>
   <body>
-    <div class="lg:px-40 px-6">
+    <div class="pb-[200vh]">
       <Navbar />
+      <Hero />
     </div>
   </body>
 </html>
@@ -21,6 +23,6 @@ import Navbar from "../components/Navbar.astro";
   @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap");
 
   body {
-    @apply bg-bg text-text-1 font-noto-sans;
+    @apply overflow-x-hidden bg-bg font-noto-sans text-text-1;
   }
 </style>
