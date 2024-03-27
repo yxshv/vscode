@@ -1,16 +1,26 @@
 ---
-
+import Navbar from "../components/Navbar.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Visual Studio Code</title>
+  </head>
+  <body>
+    <div class="lg:px-40 px-6">
+      <Navbar />
+    </div>
+  </body>
 </html>
+
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap");
+
+  body {
+    @apply bg-bg text-text-1 font-noto-sans;
+  }
+</style>

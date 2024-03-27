@@ -1,0 +1,25 @@
+---
+import Vscode from "../assets/vscode.svg";
+import { MagnifyingGlassIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+---
+
+<nav class="flex justify-between text-md py-6 lg:py-8 items-center">
+  <a href="/" class="cursor-pointer flex justify-center gap-2 items-center">
+    <img src={Vscode.src} alt="vscode logo" class="w-5" />
+    Visual Studio Code
+  </a>
+
+  <div class="hidden lg:flex text-text-2 justify-center gap-3 items-center">
+    <a class="cursor-pointer hover:text-text-1">Docs</a>
+    <a class="cursor-pointer hover:text-text-1">Blog</a>
+    <a class="cursor-pointer hover:text-text-1">API</a>
+    <a class="cursor-pointer hover:text-text-1">Extension</a>
+    <a class="cursor-pointer hover:text-text-1">
+      <MagnifyingGlassIcon className="w-5 h-5" />
+    </a>
+  </div>
+
+  <button class="lg:hidden flex justify-center items-center">
+    <HamburgerMenuIcon className="w-5 h-5" />
+  </button>
+</nav>
