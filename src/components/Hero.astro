@@ -3,37 +3,39 @@ import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 ---
 
 <div
-  class="lg:px-40 px-6 flex flex-col justify-center gap-4 lg:gap-8 items-center mt-10"
+  class="xl:px-40 px-6 flex flex-col justify-center gap-4 xl:gap-8 items-center mt-10"
 >
-  <div data-heading class="opacity-0 will-change-[opacity]">
+  <div data-heading class="xl:opacity-0 xl:will-change-[opacity]">
     <h1
-      class="text-center text-4xl will-change-[opacity] lg:text-7xl flex flex-col justify-center gap-4"
+      class="text-center text-4xl xl:text-7xl xl:will-change-[opacity,transform] flex flex-col justify-center gap-4"
     >
       <span class="font-light">Code Editing.</span>
       <span class="font-medium">Redefined</span>
     </h1>
   </div>
-  <div data-desc class="will-change-[opacity] opacity-0">
-    <p class="text-center will-change-[opacity] text-md lg:text-xl font-light">
+  <div data-desc class="xl:will-change-[opacity] xl:opacity-0">
+    <p
+      class="text-center xl:will-change-[opacity,transform] text-md xl:text-xl font-light"
+    >
       A free, open source, cross platform code editor
     </p>
   </div>
-  <div data-btns class="opacity-0 will-change-[opacity]">
+  <div data-btns class="xl:opacity-0 xl:will-change-[opacity]">
     <div
-      class="flex justify-center gradient will-change-[opacity] items-center text-sm lg:text-lg font-light gap-3"
+      class="flex justify-center gradient xl:will-change-[opacity,transform] items-center text-sm xl:text-lg font-light gap-3"
     >
       <div
         style={{
           "--color-start": "#1F9CF0",
           "--color-end": "#206DBF",
         }}
-        class="p-[2px] bg-gradient-to-t gradient rounded-[calc(0.375rem+2px)] lg:rounded-[calc(0.5rem+2px)]"
+        class="p-[2px] bg-gradient-to-t gradient rounded-[calc(0.375rem+2px)] xl:rounded-[calc(0.5rem+2px)]"
       >
         <a
           href="#"
-          class="bg-accent-1 text-white px-5 lg:px-6 py-2 gap-1 flex justify-center items-center rounded-md lg:rounded-lg"
+          class="bg-accent-1 text-white px-5 xl:px-6 py-2 gap-1 flex justify-center items-center rounded-md xl:rounded-lg"
         >
-          <DownloadIcon className="lg:w-5 lg:h-5" />
+          <DownloadIcon className="xl:w-5 xl:h-5" />
           Download
         </a>
       </div>
@@ -43,26 +45,26 @@ import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
           "--color-start": "rgb(31, 156, 240, 0.5)",
           "--color-end": "#38393E",
         }}
-        class="p-[2px] bg-gradient-to-t gradient rounded-[calc(0.375rem+2px)] lg:rounded-[calc(0.5rem+2px)]"
+        class="p-[2px] bg-gradient-to-t gradient rounded-[calc(0.375rem+2px)] xl:rounded-[calc(0.5rem+2px)]"
       >
         <a
           href="{{ site.github }}"
-          class="bg-gray-1 text-white px-5 lg:px-6 py-2 rounded-md lg:rounded-lg gap-1 flex justify-center items-center"
+          class="bg-gray-1 text-white px-5 xl:px-6 py-2 rounded-md xl:rounded-lg gap-1 flex justify-center items-center"
           >Try it on the Web
-          <ArrowRightIcon className="lg:w-5 lg:h-5" />
+          <ArrowRightIcon className="xl:w-5 xl:h-5" />
         </a>
       </div>
     </div>
   </div>
   <div
     data-img
-    class="opacity-0 lg:mt-14 mt-6 z-1 scale-90 will-change-[opacity,transform]"
+    class="xl:opacity-0 xl:mt-14 mt-6 z-1 lg:scale-90 xl:translate-y-[100px] xl:will-change-[opacity,transform]"
   >
     <div
-      class="flex justify-center isolate rounded-[calc(0.5rem+2px)] editor-bg p-[2px] will-change-[opacity,transform] items-center relative"
+      class="flex justify-center isolate rounded-[calc(0.5rem+2px)] editor-bg p-[2px] xl:will-change-[opacity,transform] items-center relative"
     >
       <img src="/dark+.png" class="rounded-lg" />
-      <div class="blob-1 bg-accent-1 w-[100vw] lg:w-[65vw]"></div>
+      <div class="blob-1 bg-accent-1 w-[100vw] xl:w-[65vw]"></div>
     </div>
   </div>
 </div>
@@ -102,70 +104,75 @@ import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
     this.window.scrollY = 0;
   });
 
-  gsap.to("[data-heading]", {
-    opacity: 1,
-    duration: 1,
-    delay: 0.1,
-  });
-  gsap.to("[data-heading]>h1", {
-    opacity: 0,
-    y: -20,
-    scrollTrigger: {
-      trigger: "body",
-      start: "top 0%",
-      endTrigger: "body",
-      end: "top -10%",
-      scrub: true,
-    },
-  });
+  window.onload = () => {
+    if (window.innerWidth < 1280) {
+      return;
+    }
+    gsap.to("[data-heading]", {
+      opacity: 1,
+      duration: 1,
+      delay: 0.1,
+    });
+    gsap.to("[data-heading]>h1", {
+      opacity: 0,
+      y: -20,
+      scrollTrigger: {
+        trigger: "body",
+        start: "top 0%",
+        endTrigger: "body",
+        end: "top -10%",
+        scrub: true,
+      },
+    });
 
-  gsap.to("[data-desc]", {
-    opacity: 1,
-    duration: 1,
-    delay: 0.2,
-  });
-  gsap.to("[data-desc]>p", {
-    opacity: 0,
-    y: -40,
-    scrollTrigger: {
-      trigger: "body",
-      start: "top 0%",
-      end: "top -20%",
-      scrub: true,
-    },
-  });
+    gsap.to("[data-desc]", {
+      opacity: 1,
+      duration: 1,
+      delay: 0.2,
+    });
+    gsap.to("[data-desc]>p", {
+      opacity: 0,
+      y: -40,
+      scrollTrigger: {
+        trigger: "body",
+        start: "top 0%",
+        end: "top -20%",
+        scrub: true,
+      },
+    });
 
-  gsap.to("[data-btns]", {
-    opacity: 1,
-    duration: 1,
-    delay: 0.3,
-  });
-  gsap.to("[data-btns]>div", {
-    opacity: 0,
-    y: -60,
-    scrollTrigger: {
-      trigger: "body",
-      start: "top 0%",
-      end: "top -30%",
-      scrub: true,
-    },
-  });
+    gsap.to("[data-btns]", {
+      opacity: 1,
+      duration: 1,
+      delay: 0.3,
+    });
+    gsap.to("[data-btns]>div", {
+      opacity: 0,
+      y: -60,
+      scrollTrigger: {
+        trigger: "body",
+        start: "top 0%",
+        end: "top -30%",
+        scrub: true,
+      },
+    });
 
-  gsap.to("[data-img]", {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    duration: 1,
-    delay: 0.4,
-  });
-  gsap.to("[data-img]>div>img", {
-    y: -100,
-    scale: 1.1,
-    scrollTrigger: {
-      trigger: "body",
-      start: "top 0%",
-      end: "top -40%",
-      scrub: 0,
-    },
-  });
+    gsap.to("[data-img]", {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      duration: 1,
+      delay: 0.4,
+    });
+    gsap.to("[data-img]>div>img", {
+      y: -100,
+      scale: 1.1,
+      scrollTrigger: {
+        trigger: "body",
+        start: "top 0%",
+        end: "top -40%",
+        scrub: 0,
+      },
+    });
+  };
 </script>

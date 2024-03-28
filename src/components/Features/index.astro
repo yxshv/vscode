@@ -1,0 +1,148 @@
+---
+import Feature, { type Props } from "./Feature.astro";
+
+const features: Props[] = [
+  {
+    title: "Meet IntelliSense",
+    description:
+      "Go beyond syntax highlighting and autocomplete with IntelliSense, which provides smart completions based on variable types, function definitions, and imported modules.",
+  },
+  {
+    title: "Git commands built-in.",
+    description:
+      "Working with Git and other SCM providers has never been easier. Review diffs, stage files, and make commits right from the editor. Push and pull from any hosted SCM service.",
+  },
+  {
+    title: "Debug Like a Pro",
+    description:
+      "Unleash the power of VSCode's debugging tools to identify and resolve issues swiftly. With support for multiple languages and customizable debuggers, pinpointing bugs becomes a breeze, empowering developers to code with confidence.",
+  },
+  {
+    title: "Customize Your Workspace",
+    description:
+      "Personalize your coding environment with themes, icons, and extensions from the VSCode Marketplace, creating a visually appealing and tailored setup that boosts productivity and makes coding more enjoyable.",
+  },
+];
+---
+
+<div data-card-container class="xl:px-5 px-6 mt-20 xl:mt-44 z-10 relative">
+  <h1 class="text-center text-xl xl:text-5xl font-medium">
+    Packed with Features
+  </h1>
+
+  <div class="flex mt-48">
+    <div data-card-img class="w-1/2 h-screen will-change-transform relative">
+      <div
+        class="rounded-3xl w-[85%] aspect-[699/689] z-0 hidden will-change-[display] absolute shadow-[0px_0px_50px_10px_rgb(0,0,0,.15)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-gray-2 to-gray-1 pt-10 pl-10"
+      >
+        <div
+          class="absolute rounded-3xl z-1 top-0 left-0 w-full h-full bg-gradient-to-t from-gray-1 via-gray-1/0 to-gray-1/0"
+        >
+        </div>
+        <img
+          src="/intellisense.png"
+          class="rounded-tl-xl shadow-[-2px_-2px_50px_5px_rgb(0,0,0,0.5)] border-gray-3 border-t rounded-br-3xl border-l"
+        />
+      </div>
+      <div
+        class="rounded-3xl w-[85%] aspect-[699/689] z-0 hidden will-change-[display] absolute shadow-[0px_0px_50px_10px_rgb(0,0,0,.15)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-gray-2 to-gray-1 pt-10 pl-10"
+      >
+        <div
+          class="absolute rounded-3xl z-1 top-0 left-0 w-full h-full bg-gradient-radial from-gray-1/0 via-gray-1/10 to-gray-1"
+        >
+        </div>
+        <img
+          src="/git-client.png"
+          class="rounded-tl-xl shadow-[-2px_-2px_50px_5px_rgb(0,0,0,0.5)] border-gray-3 border-t border-l rounded-br-3xl"
+        />
+      </div>
+      <div
+        class="rounded-3xl w-[85%] aspect-[699/689] z-0 hidden will-change-[display] absolute shadow-[0px_0px_50px_10px_rgb(0,0,0,.15)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-bl from-gray-2 to-gray-1 pt-10 pr-10"
+      >
+        <div
+          class="absolute rounded-3xl z-1 top-0 left-0 w-full h-full bg-gradient-to-b from-gray-1/0 via-gray-1/0 to-gray-1/80"
+        >
+        </div>
+        <img
+          src="/debug.png"
+          class="rounded-tr-xl shadow-[2px_-2px_50px_5px_rgb(0,0,0,0.5)] border-gray-3 border-t border-r rounded-bl-3xl"
+        />
+      </div>
+      <div
+        class="rounded-3xl overflow-hidden w-[85%] aspect-[699/689] z-0 hidden will-change-[display] absolute shadow-[0px_0px_50px_10px_rgb(0,0,0,.15)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-bl from-gray-2 to-gray-1 pt-10 pr-10"
+      >
+        <div
+          class="absolute rounded-3xl z-[5] top-0 left-0 w-full h-full bg-gradient-to-b from-gray-1/0 via-gray-1/0 to-gray-1/60"
+        >
+        </div>
+        <img
+          src="/cropped-vitesse.png"
+          class="absolute z-[2] -bottom-[45%] -left-[40%] rounded-t-xl shadow-[2px_-2px_50px_5px_rgb(0,0,0,0.5)] border-gray-3 border-t border-r"
+        />
+        <img
+          src="/cropped-dracula.png"
+          class="absolute z-1 -bottom-[20%] -right-1/3 rounded-t-xl shadow-[-2px_-2px_50px_5px_rgb(0,0,0,0.5)] border-gray-3 border-t border-l"
+        />
+        <img
+          src="/cropped-dark+.png"
+          class="rounded-t-xl shadow-[2px_-2px_50px_5px_rgb(0,0,0,0.5)] border-gray-3 border-t border-r rounded-bl-3xl"
+        />
+      </div>
+    </div>
+    <div
+      data-card-text
+      class="w-1/2 min-h-screen flex flex-col px-20 pt-[30vh]"
+    >
+      {features.map((f) => <Feature {...f} />)}
+    </div>
+  </div>
+</div>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const imgs = Array.from(
+    document.querySelector("[data-card-img]")!.children
+  ) as HTMLDivElement[];
+  const texts = Array.from(
+    document.querySelector("[data-card-text]")!.children
+  ) as HTMLDivElement[];
+
+  gsap.to("[data-card-img]", {
+    scrollTrigger: {
+      trigger: "[data-card-img]",
+      start: "center center",
+      endTrigger: "[data-card-text]>div:last-child",
+      end: "center center",
+      pin: true,
+    },
+  });
+
+  texts.forEach(async (t, i) => {
+    document.addEventListener("scroll", () => {
+      const rect = t.getBoundingClientRect();
+      const pos = (rect.top + rect.height / 2) / window.innerHeight;
+
+      if (pos > 0.25 && pos < 0.75) {
+        t.style.opacity = "1";
+        imgs[i].style.display = "block";
+      } else if (i === 0 && pos > 0.25 && pos > 0.75) {
+        imgs[i].style.display = "block";
+      } else if (i === texts.length - 1 && pos < 0.25) {
+        imgs[i].style.display = "block";
+      } else {
+        t.style.opacity = "0.3";
+        imgs[i].style.display = "none";
+      }
+    });
+  });
+</script>
+
+<style>
+  .bg-gradient-radial {
+    background: radial-gradient(circle at top left, var(--tw-gradient-stops));
+  }
+</style>

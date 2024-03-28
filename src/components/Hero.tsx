@@ -26,11 +26,11 @@ export default function Hero() {
       <motion.div
         initial="hidden"
         animate="visible"
-        className="mt-14 flex min-h-[70vh] flex-col items-center justify-normal gap-4 px-6 lg:mt-28 lg:min-h-[auto] lg:gap-8 lg:px-40"
+        className="mt-14 flex min-h-[70vh] flex-col items-center justify-normal gap-4 px-6 xl:mt-28 xl:min-h-[auto] xl:gap-8 xl:px-40"
       >
         <h1
           ref={titleRef}
-          className="flex flex-col justify-center gap-1 text-center text-4xl lg:gap-4 lg:text-7xl"
+          className="flex flex-col justify-center gap-1 text-center text-4xl xl:gap-4 xl:text-7xl"
         >
           <span className="font-light">Code Editing.</span>
           <span className="font-medium">Redefined</span>
@@ -38,14 +38,14 @@ export default function Hero() {
         <motion.p
           variants={fadeIn}
           transition={{ delay: 0.2 }}
-          className="text-md text-center font-light lg:text-xl"
+          className="text-md text-center font-light xl:text-xl"
         >
           A free, open source, cross platform code editor
         </motion.p>
         <motion.div
           variants={fadeIn}
           transition={{ delay: 0.3 }}
-          className="flex items-center justify-center gap-2 text-sm font-light lg:gap-3 lg:text-lg"
+          className="flex items-center justify-center gap-2 text-sm font-light xl:gap-3 xl:text-lg"
         >
           <div
             style={
@@ -54,13 +54,13 @@ export default function Hero() {
                 "--end-color": "#206DBF",
               } as CSSProperties
             }
-            className="gradient rounded-[calc(0.375rem+2px)] bg-gradient-to-t p-[2px] lg:rounded-[calc(0.5rem+2px)]"
+            className="gradient rounded-[calc(0.375rem+2px)] bg-gradient-to-t p-[2px] xl:rounded-[calc(0.5rem+2px)]"
           >
             <a
               href="#"
-              className="flex items-center justify-center gap-1 rounded-md bg-accent-1 px-5 py-2 text-white lg:rounded-lg lg:px-6"
+              className="flex items-center justify-center gap-1 rounded-md bg-accent-1 px-5 py-2 text-white xl:rounded-lg xl:px-6"
             >
-              <DownloadIcon className="lg:h-5 lg:w-5" />
+              <DownloadIcon className="xl:h-5 xl:w-5" />
               Download
             </a>
           </div>
@@ -72,14 +72,14 @@ export default function Hero() {
                 "--end-color": "#38393E",
               } as CSSProperties
             }
-            className="gradient rounded-[calc(0.375rem+2px)] bg-gradient-to-t p-[2px] lg:rounded-[calc(0.5rem+2px)]"
+            className="gradient rounded-[calc(0.375rem+2px)] bg-gradient-to-t p-[2px] xl:rounded-[calc(0.5rem+2px)]"
           >
             <a
               href="#"
-              className="flex items-center justify-center gap-1 rounded-md bg-gray-1 px-5 py-2 text-white lg:rounded-lg lg:px-6"
+              className="flex items-center justify-center gap-1 rounded-md bg-gray-1 px-5 py-2 text-white xl:rounded-lg xl:px-6"
             >
               Try it on the Web
-              <ArrowRightIcon className="lg:h-5 lg:w-5" />
+              <ArrowRightIcon className="xl:h-5 xl:w-5" />
             </a>
           </div>
         </motion.div>
@@ -103,10 +103,10 @@ export default function Hero() {
           }}
           className="relative flex items-center justify-center will-change-transform"
         >
-          <div className="editor-bg mt-5 rounded-[calc(2px+0.5rem)] p-0 lg:mt-14 lg:p-[2px]">
+          <div className="editor-bg mt-5 rounded-[calc(2px+0.5rem)] p-0 xl:mt-14 xl:p-[2px]">
             <img src="/dark+.png" className="rounded-lg" />
           </div>
-          <div className="blob-1 absolute left-[50%] top-[80%] z-[-1] aspect-square w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-1 blur-[150px] lg:w-[65vw] lg:blur-[300px]"></div>
+          <div className="blob-1 absolute left-[50%] top-[80%] z-[-1] aspect-square w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-1 blur-[150px] xl:w-[65vw] xl:blur-[300px]"></div>
         </motion.div>
       </motion.div>
     </>
