@@ -18,7 +18,18 @@ export default {
         },
         gray: {
           1: "#38393E",
+          2: "#252527",
+          3: "#7B7D88",
         },
+      },
+    },
+    animation: {
+      "fade-in": "fade-in 1s ease-in-out",
+    },
+    keyframes: {
+      "fade-in": {
+        "0%": { opacity: "0" },
+        "100%": { opacity: "1" },
       },
     },
   },
