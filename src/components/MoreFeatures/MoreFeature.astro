@@ -1,0 +1,18 @@
+---
+export type Props = {
+  title: string;
+  description: string;
+  img: string;
+};
+
+const { title, description, img } = Astro.props;
+---
+
+<div
+  class="bg-gray-2 rounded-2xl p-5 md:p-8 gap-3 flex flex-col justify-center items-center text-center"
+>
+  <h1 class="font-medium text-xl md:text-2xl">{title}</h1>
+  <p class="text-text-2 text-sm md:text-md">{description}</p>
+
+  <img src={img} alt={title} class="rounded-lg" />
+</div>

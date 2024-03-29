@@ -3,39 +3,39 @@ import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 ---
 
 <div
-  class="xl:px-40 px-6 h-screen xl:h-auto flex flex-col gap-4 xl:gap-8 items-center mt-10"
+  class="lg:px-40 pt-14 sm:pt-0 px-6 flex flex-col gap-4 lg:gap-8 items-center mt-10"
 >
-  <div data-heading class="xl:opacity-0 xl:will-change-[opacity]">
+  <div data-heading class="lg:opacity-0 z-10 lg:will-change-[opacity]">
     <h1
-      class="text-center text-4xl xl:text-7xl xl:will-change-[opacity,transform] flex flex-col justify-center gap-4"
+      class="text-center text-4xl lg:text-7xl lg:will-change-[opacity,transform] flex flex-col justify-center gap-4"
     >
       <span class="font-light">Code Editing.</span>
       <span class="font-medium">Redefined</span>
     </h1>
   </div>
-  <div data-desc class="xl:will-change-[opacity] xl:opacity-0">
+  <div data-desc class="lg:will-change-[opacity] z-10 lg:opacity-0">
     <p
-      class="text-center xl:will-change-[opacity,transform] text-md xl:text-xl font-light"
+      class="text-center lg:will-change-[opacity,transform] text-md lg:text-xl font-light"
     >
       A free, open source, cross platform code editor
     </p>
   </div>
-  <div data-btns class="xl:opacity-0 xl:will-change-[opacity]">
+  <div data-btns class="lg:opacity-0 z-10 lg:will-change-[opacity]">
     <div
-      class="flex justify-center gradient xl:will-change-[opacity,transform] items-center text-sm xl:text-lg font-light gap-3"
+      class="flex justify-center gradient lg:will-change-[opacity,transform] items-center text-sm lg:text-lg font-light gap-3"
     >
       <div
         style={{
           "--color-start": "#1F9CF0",
           "--color-end": "#206DBF",
         }}
-        class="p-[2px] bg-gradient-to-t gradient rounded-[calc(0.375rem+2px)] xl:rounded-[calc(0.5rem+2px)]"
+        class="p-[2px] bg-gradient-to-t gradient rounded-[calc(0.375rem+2px)] lg:rounded-[calc(0.5rem+2px)]"
       >
         <a
           href="#"
-          class="bg-accent-1 text-white px-5 xl:px-6 py-2 gap-1 flex justify-center items-center rounded-md xl:rounded-lg"
+          class="bg-accent-1 text-white px-5 lg:px-6 py-2 gap-1 flex justify-center items-center rounded-md lg:rounded-lg"
         >
-          <DownloadIcon className="xl:w-5 xl:h-5" />
+          <DownloadIcon className="lg:w-5 lg:h-5" />
           Download
         </a>
       </div>
@@ -45,26 +45,27 @@ import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
           "--color-start": "rgb(31, 156, 240, 0.5)",
           "--color-end": "#38393E",
         }}
-        class="p-[2px] bg-gradient-to-t gradient rounded-[calc(0.375rem+2px)] xl:rounded-[calc(0.5rem+2px)]"
+        class="p-[2px] bg-gradient-to-t gradient rounded-[calc(0.375rem+2px)] lg:rounded-[calc(0.5rem+2px)]"
       >
         <a
           href="#"
-          class="bg-gray-1 text-white px-5 xl:px-6 py-2 rounded-md xl:rounded-lg gap-1 flex justify-center items-center"
-          >Try it on the Web
-          <ArrowRightIcon className="xl:w-5 xl:h-5" />
+          class="bg-gray-1 text-white px-5 lg:px-6 py-2 rounded-md lg:rounded-lg gap-1 flex justify-center items-center"
+        >
+          Try it on the Web
+          <ArrowRightIcon className="lg:w-5 lg:h-5" />
         </a>
       </div>
     </div>
   </div>
   <div
     data-img
-    class="xl:opacity-0 xl:mt-14 mt-6 z-1 motion-reduce:scale-100 lg:scale-90 xl:translate-y-[100px] xl:will-change-[opacity,transform]"
+    class="lg:opacity-0 lg:mt-12 xl:mt-14 mt-6 z-1 motion-reduce:scale-100 lg:scale-90 lg:translate-y-[80px] xl:translate-y-[100px] lg:will-change-[opacity,transform]"
   >
     <div
-      class="flex justify-center isolate rounded-[calc(0.5rem+2px)] editor-bg p-[2px] motion-reduce:will-change-[] xl:will-change-[opacity,transform] items-center relative"
+      class="flex justify-center isolate rounded-[calc(0.5rem+2px)] editor-bg p-[2px] motion-reduce:will-change-[] lg:will-change-[opacity,transform] items-center relative"
     >
       <img src="/dark+.png" class="rounded-lg" />
-      <div class="blob-1 bg-accent-1 w-[100vw] xl:w-[65vw]"></div>
+      <div class="blob-1 bg-accent-1 w-[100vw] lg:w-[65vw]"></div>
     </div>
   </div>
 </div>
@@ -95,11 +96,12 @@ import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 </style>
 
 <script>
-  import { isMobile } from "../utils/responsive";
+  import { breakpoint } from "../utils/responsive";
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
 
-  if (!isMobile()) {
+  if (breakpoint("lg")) {
+    console.log("going", window.innerWidth);
     gsap.registerPlugin(ScrollTrigger);
 
     window.addEventListener("beforeunload", function () {

@@ -30,7 +30,7 @@ export default function Hero() {
       >
         <h1
           ref={titleRef}
-          className="flex flex-col justify-center gap-1 text-center text-4xl xl:gap-4 xl:text-7xl"
+          className="flex flex-col justify-center gap-1 text-center text-4xl lg:gap-4 lg:text-7xl"
         >
           <span className="font-light">Code Editing.</span>
           <span className="font-medium">Redefined</span>

@@ -1,0 +1,38 @@
+---
+import MoreFeature, {
+  type Props as MoreFeatureProps,
+} from "./MoreFeature.astro";
+
+const features: MoreFeatureProps[] = [
+  {
+    title: "Integrated Terminal",
+    description:
+      "Seamlessly run commands, scripts, and tools without leaving your coding zone. Stay efficient, stay focused.",
+    img: "/terminal.png",
+  },
+  {
+    title: "Live Share",
+    description:
+      "Collaborate in real-time, share code, server, and terminal, breaking barriers for seamless teamwork anywhere.",
+    img: "/live-share.png",
+  },
+  {
+    title: "Quick Multiple Selections",
+    description:
+      "Effortlessly select multiple instances of text simultaneously in VSCode, simplifying repetitive editing tasks for smoother coding workflows.",
+    img: "/multi-cursor.gif",
+  },
+  {
+    title: "Never Loose your changes",
+    description:
+      "Your code changes are always protected. Easily track, manage, and revert edits to maintain control and confidence in your projects.",
+    img: "/timeline.png",
+  },
+];
+---
+
+<div class="px-5 md:px-20 lg:px-40 xl:px-60 mt-60">
+  <div class="grid grid-cols-1 gap-8 md:grids-cols-2">
+    {features.map((feature) => <MoreFeature {...feature} />)}
+  </div>
+</div>

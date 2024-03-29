@@ -3,12 +3,12 @@
 ---
 
 <div
-  class="relative mt-20 flex justify-center overflow-hidden items-center flex-col lg:mt-60 xl:mt-[40vh] pt-[25vh] md:pt-[30vh] lg:pt-[60vh]"
+  class="relative mt-20 flex justify-center overflow-hidden items-center flex-col lg:mt-60 xl:mt-[40vh] pt-[15rem] sm:pt-[20rem] md:pt-[25rem] lg:pt-[30rem] xl:pt-[35rem]"
 >
   <img
     data-ext-img
     src="/extensions.png"
-    class="absolute top-0 left-0 w-full scale-150 lg:scale-125 xl:scale-100"
+    class="absolute top-0 left-0 w-full scale-150 lg:scale-100"
   />
 
   <h1
@@ -28,11 +28,11 @@
 </div>
 
 <script>
-  import { isMobile } from "../utils/responsive";
+  import { breakpoint } from "../utils/responsive";
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
 
-  if (!isMobile()) {
+  if (breakpoint("md")) {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.from("[data-ext-img]", {
