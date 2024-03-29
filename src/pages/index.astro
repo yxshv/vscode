@@ -1,7 +1,8 @@
 ---
-import Navbar from "../components/Navbar.tsx";
+import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import Features from "../components/Features/index.astro";
+import Extensions from "../components/Extensions.astro";
 ---
 
 <html lang="en">
@@ -14,9 +15,10 @@ import Features from "../components/Features/index.astro";
   </head>
   <body>
     <div class="pb-[200vh]">
-      <Navbar client:load />
+      <Navbar />
       <Hero />
       <Features />
+      <Extensions />
     </div>
   </body>
 </html>

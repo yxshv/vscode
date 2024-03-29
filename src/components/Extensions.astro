@@ -1,0 +1,65 @@
+---
+
+---
+
+<div
+  class="relative mt-20 flex justify-center overflow-hidden items-center flex-col lg:mt-60 xl:mt-[40vh] pt-[20vh] md:pt-[30vh] lg:pt-[60vh]"
+>
+  <img
+    data-ext-img
+    src="/extensions.png"
+    class="absolute top-0 left-0 w-full scale-105 lg:scale-125 xl:scale-100"
+  />
+
+  <h1
+    data-ext-h1
+    class="text-center font-medium text-2xl md:text-4xl lg:text-6xl"
+  >
+    Rich Extension Ecosystem
+  </h1>
+  <p
+    data-ext-desc
+    class="text-center w-[95%] md:w-[70ch] text-text-2 text-sm md:text-lg lg:text-xl mt-2 lg:mt-5"
+  >
+    Explore a world of possibilities with VSCode's vibrant marketplace, where
+    countless extensions await to enhance your coding experience, from
+    productivity tools to language-specific utilities and integrations.
+  </p>
+</div>
+
+<script>
+  import { isMobile } from "../utils/responsive";
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  if (!isMobile()) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from("[data-ext-img]", {
+      scrollTrigger: {
+        trigger: "[data-ext-img]",
+        start: "top 80%",
+      },
+      opacity: 0,
+      duration: 0.5,
+    });
+
+    gsap.from("[data-ext-h1]", {
+      scrollTrigger: {
+        trigger: "[data-ext-h1]",
+        start: "top 80%",
+      },
+      opacity: 0,
+      duration: 0.5,
+    });
+
+    gsap.from("[data-ext-desc]", {
+      scrollTrigger: {
+        trigger: "[data-ext-desc]",
+        start: "top 80%",
+      },
+      opacity: 0,
+      duration: 0.5,
+    });
+  }
+</script>
