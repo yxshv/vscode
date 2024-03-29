@@ -31,8 +31,8 @@ const features: MoreFeatureProps[] = [
 ];
 ---
 
-<div class="px-5 md:px-20 lg:px-40 xl:px-60 mt-60">
-  <div class="grid grid-cols-1 gap-8 md:grids-cols-2">
+<div class="px-5 md:px-16 lg:px-40 mt-60">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     {features.map((feature) => <MoreFeature {...feature} />)}
   </div>
 </div>
