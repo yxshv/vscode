@@ -65,23 +65,12 @@ import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
       class="flex justify-center isolate rounded-[calc(0.5rem+2px)] editor-bg p-[2px] motion-reduce:will-change-[] lg:will-change-[opacity,transform] items-center relative"
     >
       <img src="/dark+.png" class="rounded-lg" />
-      <div class="blob-1 bg-accent-1 w-[100vw] lg:w-[65vw]"></div>
+      <div class="blob bg-accent-1 w-[100vw] lg:w-[65vw]"></div>
     </div>
   </div>
 </div>
 
 <style>
-  .blob-1 {
-    position: absolute;
-    z-index: -1;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    filter: blur(300px);
-  }
-
   .gradient {
     --tw-gradient-stops: var(--color-start) 0%, var(--color-end) 95%;
   }
