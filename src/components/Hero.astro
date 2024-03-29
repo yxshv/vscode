@@ -48,7 +48,7 @@ import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
         class="p-[2px] bg-gradient-to-t gradient rounded-[calc(0.375rem+2px)] xl:rounded-[calc(0.5rem+2px)]"
       >
         <a
-          href="{{ site.github }}"
+          href="#"
           class="bg-gray-1 text-white px-5 xl:px-6 py-2 rounded-md xl:rounded-lg gap-1 flex justify-center items-center"
           >Try it on the Web
           <ArrowRightIcon className="xl:w-5 xl:h-5" />
@@ -58,10 +58,10 @@ import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
   </div>
   <div
     data-img
-    class="xl:opacity-0 xl:mt-14 mt-6 z-1 lg:scale-90 xl:translate-y-[100px] xl:will-change-[opacity,transform]"
+    class="xl:opacity-0 xl:mt-14 mt-6 z-1 motion-reduce:scale-100 lg:scale-90 xl:translate-y-[100px] xl:will-change-[opacity,transform]"
   >
     <div
-      class="flex justify-center isolate rounded-[calc(0.5rem+2px)] editor-bg p-[2px] xl:will-change-[opacity,transform] items-center relative"
+      class="flex justify-center isolate rounded-[calc(0.5rem+2px)] editor-bg p-[2px] motion-reduce:will-change-[] xl:will-change-[opacity,transform] items-center relative"
     >
       <img src="/dark+.png" class="rounded-lg" />
       <div class="blob-1 bg-accent-1 w-[100vw] xl:w-[65vw]"></div>
@@ -113,49 +113,52 @@ import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
       duration: 1,
       delay: 0.1,
     });
-    gsap.to("[data-heading]>h1", {
-      opacity: 0,
-      y: -20,
-      scrollTrigger: {
-        trigger: "body",
-        start: "top 0%",
-        endTrigger: "body",
-        end: "top -10%",
-        scrub: true,
-      },
-    });
+    !window.matchMedia("prefers-reduced-motion").matches &&
+      gsap.to("[data-heading]>h1", {
+        opacity: 0,
+        y: -20,
+        scrollTrigger: {
+          trigger: "body",
+          start: "top 0%",
+          endTrigger: "body",
+          end: "top -10%",
+          scrub: true,
+        },
+      });
 
     gsap.to("[data-desc]", {
       opacity: 1,
       duration: 1,
       delay: 0.2,
     });
-    gsap.to("[data-desc]>p", {
-      opacity: 0,
-      y: -40,
-      scrollTrigger: {
-        trigger: "body",
-        start: "top 0%",
-        end: "top -20%",
-        scrub: true,
-      },
-    });
+    !window.matchMedia("prefers-reduced-motion").matches &&
+      gsap.to("[data-desc]>p", {
+        opacity: 0,
+        y: -40,
+        scrollTrigger: {
+          trigger: "body",
+          start: "top 0%",
+          end: "top -20%",
+          scrub: true,
+        },
+      });
 
     gsap.to("[data-btns]", {
       opacity: 1,
       duration: 1,
       delay: 0.3,
     });
-    gsap.to("[data-btns]>div", {
-      opacity: 0,
-      y: -60,
-      scrollTrigger: {
-        trigger: "body",
-        start: "top 0%",
-        end: "top -30%",
-        scrub: true,
-      },
-    });
+    !window.matchMedia("prefers-reduced-motion").matches &&
+      gsap.to("[data-btns]>div", {
+        opacity: 0,
+        y: -60,
+        scrollTrigger: {
+          trigger: "body",
+          start: "top 0%",
+          end: "top -30%",
+          scrub: true,
+        },
+      });
 
     gsap.to("[data-img]", {
       opacity: 1,
@@ -164,15 +167,16 @@ import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
       duration: 1,
       delay: 0.4,
     });
-    gsap.to("[data-img]>div>img", {
-      y: -100,
-      scale: 1.1,
-      scrollTrigger: {
-        trigger: "body",
-        start: "top 0%",
-        end: "top -40%",
-        scrub: 0,
-      },
-    });
+    !window.matchMedia("prefers-reduced-motion").matches &&
+      gsap.to("[data-img]>div>img", {
+        y: -100,
+        scale: 1.1,
+        scrollTrigger: {
+          trigger: "body",
+          start: "top 0%",
+          end: "top -40%",
+          scrub: 0,
+        },
+      });
   };
 </script>
