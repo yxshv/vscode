@@ -95,88 +95,88 @@ import { DownloadIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 </style>
 
 <script>
+  import { isMobile } from "../utils/responsive";
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger);
+  if (!isMobile()) {
+    gsap.registerPlugin(ScrollTrigger);
 
-  window.addEventListener("beforeunload", function () {
-    this.window.scrollY = 0;
-  });
-
-  window.onload = () => {
-    if (window.innerWidth < 1280) {
-      return;
-    }
-    gsap.to("[data-heading]", {
-      opacity: 1,
-      duration: 1,
-      delay: 0.1,
+    window.addEventListener("beforeunload", function () {
+      this.window.scrollY = 0;
     });
-    !window.matchMedia("prefers-reduced-motion").matches &&
-      gsap.to("[data-heading]>h1", {
-        opacity: 0,
-        y: -20,
-        scrollTrigger: {
-          trigger: "body",
-          start: "top 0%",
-          endTrigger: "body",
-          end: "top -10%",
-          scrub: true,
-        },
-      });
 
-    gsap.to("[data-desc]", {
-      opacity: 1,
-      duration: 1,
-      delay: 0.2,
-    });
-    !window.matchMedia("prefers-reduced-motion").matches &&
-      gsap.to("[data-desc]>p", {
-        opacity: 0,
-        y: -40,
-        scrollTrigger: {
-          trigger: "body",
-          start: "top 0%",
-          end: "top -20%",
-          scrub: true,
-        },
+    window.onload = () => {
+      gsap.to("[data-heading]", {
+        opacity: 1,
+        duration: 1,
+        delay: 0.1,
       });
+      !window.matchMedia("prefers-reduced-motion").matches &&
+        gsap.to("[data-heading]>h1", {
+          opacity: 0,
+          y: -20,
+          scrollTrigger: {
+            trigger: "body",
+            start: "top 0%",
+            endTrigger: "body",
+            end: "top -10%",
+            scrub: true,
+          },
+        });
 
-    gsap.to("[data-btns]", {
-      opacity: 1,
-      duration: 1,
-      delay: 0.3,
-    });
-    !window.matchMedia("prefers-reduced-motion").matches &&
-      gsap.to("[data-btns]>div", {
-        opacity: 0,
-        y: -60,
-        scrollTrigger: {
-          trigger: "body",
-          start: "top 0%",
-          end: "top -30%",
-          scrub: true,
-        },
+      gsap.to("[data-desc]", {
+        opacity: 1,
+        duration: 1,
+        delay: 0.2,
       });
+      !window.matchMedia("prefers-reduced-motion").matches &&
+        gsap.to("[data-desc]>p", {
+          opacity: 0,
+          y: -40,
+          scrollTrigger: {
+            trigger: "body",
+            start: "top 0%",
+            end: "top -20%",
+            scrub: true,
+          },
+        });
 
-    gsap.to("[data-img]", {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      duration: 1,
-      delay: 0.4,
-    });
-    !window.matchMedia("prefers-reduced-motion").matches &&
-      gsap.to("[data-img]>div>img", {
-        y: -100,
-        scale: 1.1,
-        scrollTrigger: {
-          trigger: "body",
-          start: "top 0%",
-          end: "top -40%",
-          scrub: 0,
-        },
+      gsap.to("[data-btns]", {
+        opacity: 1,
+        duration: 1,
+        delay: 0.3,
       });
-  };
+      !window.matchMedia("prefers-reduced-motion").matches &&
+        gsap.to("[data-btns]>div", {
+          opacity: 0,
+          y: -60,
+          scrollTrigger: {
+            trigger: "body",
+            start: "top 0%",
+            end: "top -30%",
+            scrub: true,
+          },
+        });
+
+      gsap.to("[data-img]", {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.4,
+      });
+      !window.matchMedia("prefers-reduced-motion").matches &&
+        gsap.to("[data-img]>div>img", {
+          y: -100,
+          scale: 1.1,
+          scrollTrigger: {
+            trigger: "body",
+            start: "top 0%",
+            end: "top -40%",
+            scrub: 0,
+          },
+        });
+    };
+  }
 </script>
